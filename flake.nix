@@ -85,7 +85,7 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts
-          ./hosts/workstation
+          ./hosts/macbook
           nixos-hardware.nixosModules.apple-macbook-pro-11-4
           hjem.nixosModules.default
         ];
