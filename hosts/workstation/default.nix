@@ -30,5 +30,32 @@
 
     # System hostname
     networking.hostName = "tundra";
+
+    # $HOME management
+    hjem.users.amartin.files = {
+      # Configuration files
+      ".config/autostart".source = ../../etc/autostart;
+      ".config/beets".source = ../../etc/beets;
+      ".config/DankMaterialShell".source = ../../etc/DankMaterialShell;
+      ".config/fastfetch".source = ../../etc/fastfetch;
+      ".config/fish".source = ../../etc/fish;
+      ".config/ghostty".source = ../../etc/ghostty;
+      ".config/git".source = ../../etc/git;
+      ".config/jj".source = ../../etc/jj;
+      ".config/MangoHud".source = ../../etc/MangoHud;
+      ".config/mpv".source = ../../etc/mpv;
+      ".config/niri".source = ../../etc/niri;
+      ".config/rmpc".source = ../../etc/rmpc;
+      ".config/systemd".source = ../../etc/systemd;
+
+      # Bin scripts
+      ".local/bin/set_gtk_theme.sh" = {
+        source = ../../bin/set_gtk_theme.sh;
+        executable = true;
+      };
+
+      # Share files
+      ".local/share/fonts".source = ../../share/fonts;
+    };
   };
 }

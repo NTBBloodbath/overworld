@@ -69,11 +69,9 @@ mouse-hide-while-typing = true
 shell-integration = detect
 shell-integration-features = cursor,sudo,title
 
-gtk-adwaita = true
 gtk-wide-tabs = true
 # top | bottom | left | right
 gtk-tabs-location = top
-gtk-gsk-renderer = default
 
 ###------------------------------------
 ##   Keybindings

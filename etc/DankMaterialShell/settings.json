@@ -124,6 +124,10 @@
     {
       "id": "focusedWindow",
       "enabled": true
+    },
+    {
+      "id": "dankPomodoroTimer",
+      "enabled": true
     }
   ],
   "dankBarCenterWidgets": [
@@ -175,6 +179,7 @@
   ],
   "appLauncherViewMode": "list",
   "spotlightModalViewMode": "list",
+  "sortAppsAlphabetically": false,
   "networkPreference": "ethernet",
   "iconTheme": "System Default",
   "launcherLogoMode": "os",
@@ -195,6 +200,11 @@
   "notepadShowLineNumbers": false,
   "notepadTransparencyOverride": -1,
   "notepadLastCustomTransparency": 0.95,
+  "soundsEnabled": true,
+  "useSystemSoundTheme": false,
+  "soundNewNotification": true,
+  "soundVolumeChanged": true,
+  "soundPluggedIn": true,
   "gtkThemingEnabled": false,
   "qtThemingEnabled": false,
   "showDock": true,
@@ -223,6 +233,8 @@
   "popupGapsManual": 4,
   "dankBarPosition": 0,
   "lockScreenShowPowerActions": true,
+  "enableFprint": false,
+  "maxFprintTries": 3,
   "hideBrightnessSlider": true,
   "widgetBackgroundColor": "sth",
   "surfaceBase": "s",
@@ -231,9 +243,27 @@
   "notificationTimeoutCritical": 0,
   "notificationPopupPosition": 0,
   "osdAlwaysShowValue": true,
+  "powerActionConfirm": true,
+  "customPowerActionLogout": "",
+  "customPowerActionSuspend": "",
+  "customPowerActionHibernate": "",
+  "customPowerActionReboot": "",
+  "customPowerActionPowerOff": "",
   "updaterUseCustomCommand": false,
   "updaterCustomCommand": "",
   "updaterTerminalAdditionalParams": "",
   "screenPreferences": {},
-  "animationSpeed": 2
+  "animationSpeed": 2,
+  "acMonitorTimeout": 600,
+  "acLockTimeout": 900,
+  "acSuspendTimeout": 1200,
+  "acHibernateTimeout": 0,
+  "batteryMonitorTimeout": 0,
+  "batteryLockTimeout": 0,
+  "batterySuspendTimeout": 0,
+  "batteryHibernateTimeout": 0,
+  "lockBeforeSuspend": false,
+  "loginctlLockIntegration": true,
+  "launchPrefix": "",
+  "configVersion": 1
 }

@@ -207,8 +207,8 @@ spawn-at-startup "xwayland-satellite"
 spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 // So that Playerctl can interact with MPD
 spawn-at-startup "bash" "-c" "mpDris2 --music-dir=/mnt/Storage/Music &"
-// Quickshell
-spawn-at-startup "qs" "-c" "DankMaterialShell"
+// DankMaterialShell
+spawn-at-startup "dms" "run"
 // Currently, my wallpaper is being managed by quickshell. This swaybg is for a blurred version
 // of my wallpaper so that the overview looks like GNOME
 spawn-at-startup "swaybg" "--mode" "stretch" "--image" "~/.local/share/wallpapers/1387138_blurred.png"
@@ -320,25 +320,25 @@ binds {
     Mod+T { spawn "ghostty"; }
 
     // DankMaterialShell keybinds
-    Mod+Space hotkey-overlay-title="Application Launcher" { spawn "qs" "-c" "DankMaterialShell" "ipc" "call" "spotlight" "toggle"; }
-    Super+Alt+L hotkey-overlay-title="Lock Screen" { spawn "qs" "-c" "DankMaterialShell" "ipc" "call" "lock" "lock"; }
+    Mod+Space hotkey-overlay-title="Application Launcher" { spawn-sh "dms ipc call spotlight toggle"; }
+    Super+Alt+L hotkey-overlay-title="Lock Screen" { spawn-sh "dms ipc call lock lock"; }
 
-    Ctrl+Alt+J hotkey-overlay-title="Notepad" { spawn "qs" "-c" "DankMaterialShell" "ipc" "call" "notepad" "toggle"; }
-    Ctrl+Alt+V hotkey-overlay-title="Clipboard Manager" { spawn "qs" "-c" "DankMaterialShell" "ipc" "call" "clipboard" "toggle"; }
-    Ctrl+Alt+M hotkey-overlay-title="Task Manager" { spawn "qs" "-c" "DankMaterialShell" "ipc" "call" "processlist" "toggle"; }
-    Ctrl+Alt+N hotkey-overlay-title="Notification Center" { spawn "qs" "-c" "DankMaterialShell" "ipc" "call" "notifications" "toggle"; }
-    Ctrl+Alt+Comma hotkey-overlay-title="Settings" { spawn "qs" "-c" "DankMaterialShell" "ipc" "call" "settings" "toggle"; }
+    Ctrl+Alt+J hotkey-overlay-title="Notepad" { spawn-sh "dms ipc call notepad toggle"; }
+    Ctrl+Alt+V hotkey-overlay-title="Clipboard Manager" { spawn-sh "dms ipc call clipboard toggle"; }
+    Ctrl+Alt+M hotkey-overlay-title="Task Manager" { spawn-sh "dms ipc call processlist toggle"; }
+    Ctrl+Alt+N hotkey-overlay-title="Notification Center" { spawn-sh "dms ipc call notifications toggle"; }
+    Ctrl+Alt+Comma hotkey-overlay-title="Settings" { spawn-sh "dms ipc call settings toggle"; }
 
     // Volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "qs" "-c" "DankMaterialShell" "ipc" "call" "audio" "increment" "5"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "qs" "-c" "DankMaterialShell" "ipc" "call" "audio" "decrement" "5"; }
-    XF86AudioMute        allow-when-locked=true { spawn "qs" "-c" "DankMaterialShell" "ipc" "call" "audio" "mute"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn "qs" "-c" "DankMaterialShell" "ipc" "call" "audio" "micmute"; }
-    XF86AudioPlay        allow-when-locked=true { spawn "playerctl" "play-pause"; }
-    XF86AudioStop        allow-when-locked=true { spawn "playerctl" "stop"; }
-    XF86AudioPrev        allow-when-locked=true { spawn "playerctl" "previous"; }
-    XF86AudioNext        allow-when-locked=true { spawn "playerctl" "next"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "dms ipc call audio increment 5"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "dms ipc call audio decrement 5"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "dms ipc call audio mute"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "dms ipc call audio micmute"; }
+    XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
+    XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
+    XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
 
     Mod+Q { close-window; }
     Mod+W { toggle-column-tabbed-display; }

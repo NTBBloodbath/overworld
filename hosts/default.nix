@@ -125,6 +125,17 @@
       colored-man-pages
     ]);
 
+  # Hjem configuration
+  hjem = {
+    users = {
+      amartin = {
+        user = "amartin";
+        directory = "/home/amartin";
+      };
+    };
+    clobberByDefault = true;
+  };
+
   nix = {
     # Automatically run the Nix store optimiser by using a systemd timer
     optimise.automatic = true;
