@@ -51,8 +51,6 @@ Currently, there are two available hosts on my flake system configurations, whic
 Once everything is ready, move the contents of the `etc` directory to `~/.config`, the `share`
 directory to `~/.local/share` and the `bin` directory to `~/.local/bin`.
 
-Additionally, for my Niri setup one must follow the [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell) installation instructions. Which is basically cloning the repository, downloading [dgop](https://github.com/AvengeMedia/dgop) to `~/.local/bin`, then calling it a day.
-
 ## Showcase
 
 <details>

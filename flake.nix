@@ -23,6 +23,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # DankMaterialShell
+    dank-material-shell = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dms-cli = {
+      url = "github:AvengeMedia/danklinux";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # System monitor for DankMaterialShell
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # SpotX-Bash overlay
     oskars-dotfiles = {
       url = "github:oskardotglobal/.dotfiles/nix";
@@ -37,6 +53,9 @@
     neovim-nightly-overlay,
     norgolith,
     quickshell,
+    dank-material-shell,
+    dms-cli,
+    dgop,
     oskars-dotfiles,
     ...
   } @ inputs: {

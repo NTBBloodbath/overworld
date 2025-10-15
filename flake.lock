@@ -1,5 +1,110 @@
 {
   "nodes": {
+    "dank-material-shell": {
+      "inputs": {
+        "dgop": "dgop",
+        "dms-cli": "dms-cli",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "quickshell": "quickshell"
+      },
+      "locked": {
+        "lastModified": 1760534213,
+        "narHash": "sha256-tj7dsZE1paN5JJ0XUwSBtTx2t7glzB30I6QX0s2fE3w=",
+        "owner": "AvengeMedia",
+        "repo": "DankMaterialShell",
+        "rev": "23ef19e68390e83e5f0b3488be9b139ce0e4c588",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "DankMaterialShell",
+        "type": "github"
+      }
+    },
+    "dgop": {
+      "inputs": {
+        "nixpkgs": [
+          "dank-material-shell",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1760238269,
+        "narHash": "sha256-7CeGZM/Z/5Qt3AYByCRohGYGR1MRuXYzTTbkV/JxyAs=",
+        "owner": "AvengeMedia",
+        "repo": "dgop",
+        "rev": "95acdfce2d323e28fa8f5a4f345160962034f2b5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "dgop",
+        "type": "github"
+      }
+    },
+    "dgop_2": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1760238269,
+        "narHash": "sha256-7CeGZM/Z/5Qt3AYByCRohGYGR1MRuXYzTTbkV/JxyAs=",
+        "owner": "AvengeMedia",
+        "repo": "dgop",
+        "rev": "95acdfce2d323e28fa8f5a4f345160962034f2b5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "dgop",
+        "type": "github"
+      }
+    },
+    "dms-cli": {
+      "inputs": {
+        "nixpkgs": [
+          "dank-material-shell",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1760241259,
+        "narHash": "sha256-DlLGn+4M6tIafoDsHr2WhHG2hrHrC24S2IL3+KAvjEU=",
+        "owner": "AvengeMedia",
+        "repo": "danklinux",
+        "rev": "dae4c3ff4ce0feb930361c399747edb29d081775",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "danklinux",
+        "type": "github"
+      }
+    },
+    "dms-cli_2": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1760494773,
+        "narHash": "sha256-hitXsFTn9uSmuy6MvBrV0rREDD9H+H/0eBwh1JmxRAE=",
+        "owner": "AvengeMedia",
+        "repo": "danklinux",
+        "rev": "88ee95c303dda4557bf177ffb6737e2438f45f11",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "danklinux",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -753,6 +858,27 @@
     "quickshell": {
       "inputs": {
         "nixpkgs": [
+          "dank-material-shell",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1760228179,
+        "narHash": "sha256-4Z6k7lv3Zcgk3K+4h60LpqB9wCkR+utkYERU735U068=",
+        "ref": "refs/heads/master",
+        "rev": "c9d3ffb6043c5bf3f3009202bad7e0e5132c4a25",
+        "revCount": 693,
+        "type": "git",
+        "url": "https://git.outfoxxed.me/quickshell/quickshell"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.outfoxxed.me/quickshell/quickshell"
+      }
+    },
+    "quickshell_2": {
+      "inputs": {
+        "nixpkgs": [
           "nixpkgs"
         ]
       },
@@ -772,13 +898,16 @@
     },
     "root": {
       "inputs": {
+        "dank-material-shell": "dank-material-shell",
+        "dgop": "dgop_2",
+        "dms-cli": "dms-cli_2",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "norgolith": "norgolith",
         "oskars-dotfiles": "oskars-dotfiles",
         "playit-nixos-module": "playit-nixos-module",
-        "quickshell": "quickshell"
+        "quickshell": "quickshell_2"
       }
     },
     "systems": {
