@@ -1,13 +1,16 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   config = lib.mkIf config.overworld.gaming.enable {
     # Steam
     programs.steam = {
       enable = true;
       remotePlay.openFirewall = true;
       gamescopeSession.enable = true;
-      extraCompatPackages = [ pkgs.proton-ge-bin.steamcompattool ];
+      extraCompatPackages = [pkgs.proton-ge-bin.steamcompattool];
     };
     hardware.steam-hardware.enable = true;
 

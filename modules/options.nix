@@ -1,6 +1,4 @@
-{ lib, ... }:
-
-{
+{lib, ...}: {
   options.overworld = {
     # Laptop specific configurations
     macbook.enable = lib.mkEnableOption "Enable Macbook related programs and services";

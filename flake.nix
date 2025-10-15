@@ -30,7 +30,16 @@
     };
   };
 
-  outputs = { nixpkgs, nixos-hardware, playit-nixos-module, neovim-nightly-overlay, norgolith, quickshell, oskars-dotfiles, ... } @ inputs: {
+  outputs = {
+    nixpkgs,
+    nixos-hardware,
+    playit-nixos-module,
+    neovim-nightly-overlay,
+    norgolith,
+    quickshell,
+    oskars-dotfiles,
+    ...
+  } @ inputs: {
     nixosConfigurations = {
       # Workstation
       tundra = nixpkgs.lib.nixosSystem {
@@ -43,7 +52,7 @@
           # Spotify patched with SpotX-Bash
           ({pkgs, ...}: {
             nixpkgs.overlays = [oskars-dotfiles.overlays.spotx];
-           })
+          })
         ];
       };
       # Macbook
@@ -61,7 +70,7 @@
 
   # Binary cache to improve the build time of playit
   nixConfig = {
-    extra-substituters = [ "https://playit-nixos-module.cachix.org" ];
-    extra-trusted-public-keys = [ "playit-nixos-module.cachix.org-1:22hBXWXBbd/7o1cOnh+p0hpFUVk9lPdRLX3p5YSfRz4=" ];
+    extra-substituters = ["https://playit-nixos-module.cachix.org"];
+    extra-trusted-public-keys = ["playit-nixos-module.cachix.org-1:22hBXWXBbd/7o1cOnh+p0hpFUVk9lPdRLX3p5YSfRz4="];
   };
 }

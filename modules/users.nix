@@ -2,9 +2,7 @@
   pkgs,
   inputs,
   ...
-}:
-
-{
+}: {
   users.users = {
     amartin = {
       isNormalUser = true;

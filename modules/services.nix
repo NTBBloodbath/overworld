@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   mpdPackages = with pkgs; [
     beets
     # So that tools like Playerctl are able to interact with MPD
@@ -8,11 +11,11 @@ let
     # Terminal music player
     rmpc
   ];
-in
-{
-  environment.systemPackages = []
+in {
+  environment.systemPackages =
+    []
     ++ (lib.optionals config.overworld.mpd.enable mpdPackages)
-    ++ (lib.optionals config.overworld.lact.enable [ pkgs.lact ]);
+    ++ (lib.optionals config.overworld.lact.enable [pkgs.lact]);
 
   # NOTE: see https://github.com/NixOS/nixpkgs/issues/317544 for information about the custom service
   systemd.services.lactd = {
@@ -117,7 +120,10 @@ in
   services.thermald.enable = config.overworld.macbook.enable;
 
   # Power management
-  services.power-profiles-daemon.enable = if config.overworld.macbook.enable then false else true;
+  services.power-profiles-daemon.enable =
+    if config.overworld.macbook.enable
+    then false
+    else true;
   services.tlp = {
     enable = config.overworld.macbook.enable;
     settings = {

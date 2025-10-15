@@ -3,9 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-
-{
+}: {
   # Extra hardware configurations
   #
   # Enable ryzen_smu kernel driver
@@ -28,9 +26,9 @@
     };
     initrd.systemd.enable = true; # Do the heavy lifting for the kernel
     plymouth.enable = false; # It just makes my boot time so fucking slow it makes me want to cry
-    extraModulePackages = [] ++ (lib.optionals config.overworld.amd.enable [ pkgs.linuxPackages_xanmod_stable.zenpower ]);
-    kernelModules = [] ++ (lib.optionals config.overworld.amd.enable [ "zenpower" ]);
-    blacklistedKernelModules = [] ++ (lib.optionals config.overworld.amd.enable [ "k10temp" ]);
+    extraModulePackages = [] ++ (lib.optionals config.overworld.amd.enable [pkgs.linuxPackages_xanmod_stable.zenpower]);
+    kernelModules = [] ++ (lib.optionals config.overworld.amd.enable ["zenpower"]);
+    blacklistedKernelModules = [] ++ (lib.optionals config.overworld.amd.enable ["k10temp"]);
     kernelPackages = pkgs.linuxPackages_xanmod_stable;
     # KERNEL PARAMETER                       | Parameter description
     # ---------------------------------------+---------------------------------------------------------------------------------------
@@ -42,18 +40,19 @@
     # cpufreq.default_governor=performance   | Set CPU governor to performance
     # amdgpu.ppfeaturemask=0xffffffff        | Unlock access to overclocking my AMD GPU
     # amd_pstate=active                      | Enables the AMD cpu scaling, allowing my Ryzen to be more energy efficient
-    kernelParams = [
-      "rw"
-      "quiet"
-      "splash"
-      "rd.systemd.show_status=auto"
-      "sysrq_always_enabled=1"
-      # "cpufreq.default_governor=performance" # It seems like it is already the default in amd_pstate
-    ]
-    ++ (lib.optionals config.overworld.amd.enable [
-      "amdgpu.ppfeaturemask=0xffffffff"
-      "amd_pstate=active"
-    ]);
+    kernelParams =
+      [
+        "rw"
+        "quiet"
+        "splash"
+        "rd.systemd.show_status=auto"
+        "sysrq_always_enabled=1"
+        # "cpufreq.default_governor=performance" # It seems like it is already the default in amd_pstate
+      ]
+      ++ (lib.optionals config.overworld.amd.enable [
+        "amdgpu.ppfeaturemask=0xffffffff"
+        "amd_pstate=active"
+      ]);
   };
 
   fileSystems = lib.mkIf (!config.overworld.macbook.enable) {

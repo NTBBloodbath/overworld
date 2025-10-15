@@ -1,6 +1,4 @@
-{ config, ... }:
-
-{
+{config, ...}: {
   # Enable networking
   networking.networkmanager.enable = true;
 

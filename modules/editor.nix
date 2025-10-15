@@ -33,7 +33,8 @@
   fullConfig = (
     neovimConfig
     // {
-      wrapperArgs = lib.escapeShellArgs neovimConfig.wrapperArgs
+      wrapperArgs =
+        lib.escapeShellArgs neovimConfig.wrapperArgs
         + " --prefix PATH : ${binpath}";
     }
   );
