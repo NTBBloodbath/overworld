@@ -1,0 +1,259 @@
+{
+  "currentThemeName": "dynamic",
+  "customThemeFile": "",
+  "matugenScheme": "scheme-tonal-spot",
+  "runUserMatugenTemplates": true,
+  "dankBarTransparency": 0.9,
+  "dankBarWidgetTransparency": 0.85,
+  "popupTransparency": 1,
+  "dockTransparency": 0.85,
+  "use24HourClock": false,
+  "useFahrenheit": false,
+  "nightModeEnabled": false,
+  "weatherLocation": "10.5, -66.9",
+  "weatherCoordinates": "10.5,-66.9",
+  "useAutoLocation": false,
+  "weatherEnabled": true,
+  "showLauncherButton": true,
+  "showWorkspaceSwitcher": true,
+  "showFocusedWindow": true,
+  "showWeather": true,
+  "showMusic": true,
+  "showClipboard": true,
+  "showCpuUsage": true,
+  "showMemUsage": true,
+  "showCpuTemp": true,
+  "showGpuTemp": true,
+  "selectedGpuIndex": 0,
+  "enabledGpuPciIds": [],
+  "showSystemTray": true,
+  "showClock": true,
+  "showNotificationButton": true,
+  "showBattery": true,
+  "showControlCenterButton": true,
+  "controlCenterShowNetworkIcon": true,
+  "controlCenterShowBluetoothIcon": true,
+  "controlCenterShowAudioIcon": true,
+  "controlCenterWidgets": [
+    {
+      "id": "volumeSlider",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "brightnessSlider",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "wifi",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "bluetooth",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "audioOutput",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "audioInput",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "nightMode",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "darkMode",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "battery",
+      "enabled": true,
+      "width": 100
+    }
+  ],
+  "showWorkspaceIndex": false,
+  "showWorkspacePadding": false,
+  "showWorkspaceApps": false,
+  "maxWorkspaceIcons": 3,
+  "workspacesPerMonitor": true,
+  "workspaceNameIcons": {
+    "misc": {
+      "type": "icon",
+      "value": "dashboard"
+    },
+    "dev": {
+      "type": "icon",
+      "value": "terminal"
+    },
+    "social": {
+      "type": "icon",
+      "value": "forum"
+    },
+    "gaming": {
+      "type": "icon",
+      "value": "sports_esports"
+    }
+  },
+  "waveProgressEnabled": true,
+  "clockCompactMode": false,
+  "focusedWindowCompactMode": true,
+  "runningAppsCompactMode": true,
+  "runningAppsCurrentWorkspace": true,
+  "clockDateFormat": "ddd MMM d",
+  "lockDateFormat": "dddd, MMMM d",
+  "mediaSize": 1,
+  "dankBarLeftWidgets": [
+    {
+      "id": "launcherButton",
+      "enabled": true
+    },
+    {
+      "id": "workspaceSwitcher",
+      "enabled": true
+    },
+    {
+      "id": "focusedWindow",
+      "enabled": true
+    }
+  ],
+  "dankBarCenterWidgets": [
+    "clock"
+  ],
+  "dankBarRightWidgets": [
+    {
+      "id": "systemTray",
+      "enabled": true
+    },
+    {
+      "id": "idleInhibitor",
+      "enabled": true
+    },
+    {
+      "id": "clipboard",
+      "enabled": true
+    },
+    {
+      "id": "memUsage",
+      "enabled": true
+    },
+    {
+      "id": "cpuTemp",
+      "enabled": true
+    },
+    {
+      "id": "notificationButton",
+      "enabled": true
+    },
+    {
+      "id": "privacyIndicator",
+      "enabled": true
+    },
+    {
+      "id": "battery",
+      "enabled": true
+    },
+    {
+      "id": "controlCenterButton",
+      "enabled": true
+    }
+  ],
+  "appLauncherViewMode": "list",
+  "spotlightModalViewMode": "list",
+  "sortAppsAlphabetically": false,
+  "networkPreference": "ethernet",
+  "iconTheme": "System Default",
+  "launcherLogoMode": "os",
+  "launcherLogoCustomPath": "",
+  "launcherLogoColorOverride": "",
+  "launcherLogoColorInvertOnMode": false,
+  "launcherLogoBrightness": 0.5,
+  "launcherLogoContrast": 1,
+  "launcherLogoSizeOffset": -2,
+  "fontFamily": "Adwaita Sans",
+  "monoFontFamily": "MartianMono Nerd Font Mono",
+  "fontWeight": 400,
+  "fontScale": 1,
+  "dankBarFontScale": 1,
+  "notepadUseMonospace": true,
+  "notepadFontFamily": "",
+  "notepadFontSize": 14,
+  "notepadShowLineNumbers": false,
+  "notepadTransparencyOverride": -1,
+  "notepadLastCustomTransparency": 0.95,
+  "soundsEnabled": true,
+  "useSystemSoundTheme": false,
+  "soundNewNotification": true,
+  "soundVolumeChanged": true,
+  "soundPluggedIn": true,
+  "gtkThemingEnabled": false,
+  "qtThemingEnabled": false,
+  "showDock": true,
+  "dockAutoHide": true,
+  "dockGroupByApp": true,
+  "dockOpenOnOverview": true,
+  "dockPosition": 1,
+  "dockSpacing": 4,
+  "dockBottomGap": 0,
+  "cornerRadius": 12,
+  "notificationOverlayEnabled": false,
+  "dankBarAutoHide": false,
+  "dankBarOpenOnOverview": false,
+  "dankBarVisible": true,
+  "dankBarSpacing": 0,
+  "dankBarBottomGap": 0,
+  "dankBarInnerPadding": 8,
+  "dankBarSquareCorners": true,
+  "dankBarNoBackground": false,
+  "dankBarGothCornersEnabled": true,
+  "dankBarBorderEnabled": false,
+  "dankBarBorderColor": "surfaceText",
+  "dankBarBorderOpacity": 1,
+  "dankBarBorderThickness": 1,
+  "popupGapsAuto": true,
+  "popupGapsManual": 4,
+  "dankBarPosition": 0,
+  "lockScreenShowPowerActions": true,
+  "enableFprint": false,
+  "maxFprintTries": 3,
+  "hideBrightnessSlider": false,
+  "widgetBackgroundColor": "sth",
+  "surfaceBase": "s",
+  "notificationTimeoutLow": 5000,
+  "notificationTimeoutNormal": 5000,
+  "notificationTimeoutCritical": 0,
+  "notificationPopupPosition": 0,
+  "osdAlwaysShowValue": true,
+  "powerActionConfirm": true,
+  "customPowerActionLogout": "",
+  "customPowerActionSuspend": "",
+  "customPowerActionHibernate": "",
+  "customPowerActionReboot": "",
+  "customPowerActionPowerOff": "",
+  "updaterUseCustomCommand": false,
+  "updaterCustomCommand": "",
+  "updaterTerminalAdditionalParams": "",
+  "screenPreferences": {},
+  "animationSpeed": 2,
+  "acMonitorTimeout": 0,
+  "acLockTimeout": 0,
+  "acSuspendTimeout": 0,
+  "acHibernateTimeout": 0,
+  "batteryMonitorTimeout": 0,
+  "batteryLockTimeout": 300,
+  "batterySuspendTimeout": 300,
+  "batteryHibernateTimeout": 0,
+  "lockBeforeSuspend": true,
+  "loginctlLockIntegration": true,
+  "launchPrefix": "",
+  "configVersion": 1
+}
