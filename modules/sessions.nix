@@ -1,14 +1,22 @@
 {
+  config,
+  lib,
   pkgs,
+  inputs,
   ...
-}: {
+}:
+
+{
   services.xserver = {
     # Enable the X11 windowing system
     enable = true;
-    videoDrivers = ["amdgpu"];
+    videoDrivers = [] ++ (lib.optionals config.overworld.amd.enable ["amdgpu"]);
 
     # Configure keymap in X11
-    xkb = {
+    xkb = if config.overworld.macbook.enable then {
+      layout = "us";
+      variant = "mac";
+    } else {
       layout = "latam";
       variant = "";
     };
@@ -47,14 +55,14 @@
   ] ++ [
     # --- Niri
     xwayland-satellite # Xwayland
-    quickshell # QuickShell go brr (DankMaterialShell)
+    inputs.quickshell.packages.x86_64-linux.default # QuickShell go brr (DankMaterialShell)
     mpvpaper # Animated wallpapers from MP4
     playerctl # Control audio
     swaybg # Wallpaper
     gammastep # Eye protection, required by DankMaterialShell
     cliphist # Clipboard manager, required by DankMaterialShell
     matugen # Material You color generator, required by DankMaterialShell
-  ];
+  ] ++ (lib.optionals config.overworld.macbook.enable [ pkgs.brightnessctl ]);
 
   # Enable gnome-settings-daemon udev rules to make sure tray works well
   services.udev.packages = [pkgs.gnome-settings-daemon];

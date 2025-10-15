@@ -21,7 +21,7 @@
   # vim.opt.runtimepath:append("${parsers}")
   neovimConfig = pkgs.neovimUtils.makeNeovimConfig {
     extraLuaPackages = p: [p.magick]; # I can't have rocks.nvim install it b/c that version will not find imagemagick c binary
-    luaRcContent =
+    customLuaRC =
       /*
       lua
       */

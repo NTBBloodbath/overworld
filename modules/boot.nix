@@ -1,18 +1,19 @@
 {
+  config,
+  lib,
   pkgs,
   ...
-}: {
-  # System hostname
-  networking.hostName = "tundra";
+}:
 
+{
   # Extra hardware configurations
   #
   # Enable ryzen_smu kernel driver
-  hardware.cpu.amd.ryzen-smu.enable = true;
+  hardware.cpu.amd.ryzen-smu.enable = config.overworld.amd.enable;
 
   # Load amdgpu in stage1, fixes lower resolution in boot screen
   # during the initramfs phase
-  hardware.amdgpu.initrd.enable = true;
+  hardware.amdgpu.initrd.enable = config.overworld.amd.enable;
 
   # Bootloader
   boot = {
@@ -27,9 +28,9 @@
     };
     initrd.systemd.enable = true; # Do the heavy lifting for the kernel
     plymouth.enable = false; # It just makes my boot time so fucking slow it makes me want to cry
-    extraModulePackages = with pkgs.linuxPackages_xanmod_stable; [zenpower];
-    kernelModules = ["zenpower"];
-    blacklistedKernelModules = ["k10temp"]; # Required by zenpower
+    extraModulePackages = [] ++ (lib.optionals config.overworld.amd.enable [ pkgs.linuxPackages_xanmod_stable.zenpower ]);
+    kernelModules = [] ++ (lib.optionals config.overworld.amd.enable [ "zenpower" ]);
+    blacklistedKernelModules = [] ++ (lib.optionals config.overworld.amd.enable [ "k10temp" ]);
     kernelPackages = pkgs.linuxPackages_xanmod_stable;
     # KERNEL PARAMETER                       | Parameter description
     # ---------------------------------------+---------------------------------------------------------------------------------------
@@ -48,13 +49,14 @@
       "rd.systemd.show_status=auto"
       "sysrq_always_enabled=1"
       # "cpufreq.default_governor=performance" # It seems like it is already the default in amd_pstate
+    ]
+    ++ (lib.optionals config.overworld.amd.enable [
       "amdgpu.ppfeaturemask=0xffffffff"
       "amd_pstate=active"
-    ];
+    ]);
   };
 
-  # Mount my external FireCuda drive
-  fileSystems = {
+  fileSystems = lib.mkIf (!config.overworld.macbook.enable) {
     "/mnt/Juegos" = {
       device = "/dev/disk/by-label/Juegos";
       fsType = "ext4";
@@ -68,7 +70,12 @@
   };
 
   # Configure console (TTY) keymap
-  console.keyMap = "la-latin1";
+  #
+  # Using Xkb config is easier for macbok layout, and my desktop uses a latam spanish layout
+  console = {
+    useXkbConfig = config.overworld.macbook.enable;
+    keyMap = lib.mkIf (!config.overworld.macbook.enable) "la-latin1";
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
