@@ -76,6 +76,9 @@
     keyMap = lib.mkIf (!config.overworld.macbook.enable) "la-latin1";
   };
 
+  # Enable ZRAM
+  zramSwap.enable = config.overworld.macbook.enable;
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
