@@ -10,6 +10,7 @@
     mpdris2 # MPRIS 2 support for mpd
     # Terminal music player
     rmpc
+    cava
   ];
 in {
   environment.systemPackages =
