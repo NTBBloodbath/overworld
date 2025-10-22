@@ -24,6 +24,7 @@
         alejandra # Nix formatter
         inputs.norgolith.packages.x86_64-linux.default
         # Social
+        slack
         vesktop
         signal-desktop
         element-desktop
