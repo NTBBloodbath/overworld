@@ -23,6 +23,7 @@
         penpot-desktop
         alejandra # Nix formatter
         inputs.norgolith.packages.x86_64-linux.default
+        chromium # Separate browser for work
         # Social
         slack
         vesktop

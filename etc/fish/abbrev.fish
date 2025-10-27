@@ -15,7 +15,7 @@ abbr -a nodev cd $HOME/Develop/Node
 # abbr -a hskdev cd $HOME/Develop/Haskell
 abbr -a miscdev cd $HOME/Develop/Misc
 abbr -a nvimdev cd $HOME/Develop/Nvim
-# abbr -a workdev cd $HOME/Develop/Work
+abbr -a wdev cd $HOME/Develop/Work
 
 # Minecraft and Terraria servers
 # abbr -a mcservers cd $HOME/.local/minecraft/servers
