@@ -48,6 +48,9 @@ in {
     interval = "weekly";
   };
 
+  # Resolved for OpenVPN
+  services.resolved.enable = true;
+
   # Cloudflare WARP
   services.cloudflare-warp.enable = config.overworld.cloudflare.enable;
 

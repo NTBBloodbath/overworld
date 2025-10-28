@@ -561,6 +561,7 @@ hotkey-overlay {
 
 // Workspaces
 workspace "misc"
+workspace "work"
 workspace "dev"
 workspace "social"
 workspace "gaming"

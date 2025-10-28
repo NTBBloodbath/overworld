@@ -3,6 +3,8 @@
   inputs,
   ...
 }: {
+  programs.openvpn3.enable = true;
+
   users.users = {
     amartin = {
       isNormalUser = true;

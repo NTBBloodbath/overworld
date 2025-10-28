@@ -35,7 +35,7 @@
     hjem.users.amartin.files = {
       # Configuration files
       ".config/autostart".source = ../../etc/autostart;
-      ".config/beets".source = ../../etc/beets;
+      # ".config/beets".source = ../../etc/beets;
       ".config/DankMaterialShell".source = ../../etc/DankMaterialShell;
       ".config/fastfetch".source = ../../etc/fastfetch;
       ".config/fish".source = ../../etc/fish;
