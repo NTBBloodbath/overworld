@@ -211,7 +211,7 @@ spawn-at-startup "bash" "-c" "mpDris2 --music-dir=/mnt/Storage/Music &"
 spawn-at-startup "dms" "run"
 // Currently, my wallpaper is being managed by quickshell. This swaybg is for a blurred version
 // of my wallpaper so that the overview looks like GNOME
-spawn-at-startup "swaybg" "--mode" "stretch" "--image" "~/.local/share/wallpapers/1387138_blurred.png"
+spawn-at-startup "swaybg" "--mode" "stretch" "--image" "~/overworld/share/wallpapers/deadlock_banner_blurred.png"
 // spawn-at-startup "swaybg" "--mode" "stretch" "--image" "~/.local/share/wallpapers/1387138.png"
 // spawn-at-startup "mpvpaper" "-o" "--loop-playlist" "HDMI-A-1" "~/.local/share/wallpapers/kaguya-card-kaguyasama-love-is-war.mp4"
 

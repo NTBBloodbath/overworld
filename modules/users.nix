@@ -46,6 +46,7 @@
         bottles # Wine made easy
         protonvpn-gui # Goofy ahh VPN service need
         qbittorrent
+        bagels # Expenses tracker
       ];
     };
   };
