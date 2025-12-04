@@ -77,7 +77,7 @@
   };
 
   # Enable ZRAM
-  zramSwap.enable = config.overworld.macbook.enable;
+  zramSwap.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
