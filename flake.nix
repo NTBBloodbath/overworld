@@ -31,10 +31,10 @@
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    dms-cli = {
-      url = "github:AvengeMedia/danklinux";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # dms-cli = {
+    #   url = "github:AvengeMedia/danklinux";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     # System monitor for DankMaterialShell
     dgop = {
@@ -58,7 +58,7 @@
     hjem,
     quickshell,
     dank-material-shell,
-    dms-cli,
+    # dms-cli,
     dgop,
     oskars-dotfiles,
     ...

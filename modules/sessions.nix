@@ -60,7 +60,7 @@
       xwayland-satellite # Xwayland
       inputs.quickshell.packages.x86_64-linux.default # QuickShell go brr (DankMaterialShell)
       inputs.dank-material-shell.packages.x86_64-linux.default # DankMaterialShell
-      inputs.dms-cli.packages.x86_64-linux.default # CLI for DankMaterialShell
+      # inputs.dms-cli.packages.x86_64-linux.default # CLI for DankMaterialShell
       inputs.dgop.packages.x86_64-linux.default # System monitor for DankMaterialShell
       mpvpaper # Animated wallpapers from MP4
       playerctl # Control audio
