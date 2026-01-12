@@ -84,6 +84,16 @@ output "HDMI-A-1" {
     background-color "#2a2a3a"
 }
 
+output "DP-3" {
+    mode "2560x1440@179.998"
+
+    transform "normal"
+
+    variable-refresh-rate on-demand=true
+
+    background-color "#2a2a3a"
+}
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
