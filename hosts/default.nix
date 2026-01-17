@@ -33,9 +33,6 @@
     enableSSHSupport = true;
   };
 
-  # Enable Android Debug Bridge
-  programs.adb.enable = true;
-
   # Nix Helper
   programs.nh = {
     enable = true;
@@ -102,6 +99,7 @@
       hyperfine
       lm_sensors
       smartmontools
+      android-tools # ADB, programs.adb got deprecated and removed
       libnotify
       wl-clipboard
       # GUI applications

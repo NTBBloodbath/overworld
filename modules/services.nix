@@ -60,35 +60,33 @@ in {
     startWhenNeeded = true;
 
     user = "amartin";
+    openFirewall = true;
 
-    musicDirectory = "/mnt/Storage/Music";
-    playlistDirectory = "/mnt/Storage/Playlists";
-    network.listenAddress = "any";
-
-    extraConfig = ''
-      # Cava visualizer
-      audio_output {
-        type   "fifo"
-        name   "mpd_fifo"
-        path   "/tmp/mpd.fifo"
-        format "44100:16:2"
-      }
-
-      # HTTP Streaming (MAFA)
-      audio_output {
-        type "httpd"
-        name "HTTP Stream"
-        encoder "lame" # optional
-        port "8006"
-        bitrate "128000"
-        format "44100:16:2"
-      }
-
-      audio_output {
-        type "pipewire"
-        name "Pipewire Output"
-      }
-    '';
+    settings = {
+      bind_to_address = "any";
+      music_directory = "/mnt/Storage/Music";
+      playlist_directory = "/mnt/Storage/Playlists";
+      audio_output = [
+        {
+          type = "fifo";
+          name = "mpd_fifo";
+          path = "/tmp/mpd.fifo";
+          format = "44100:16:2";
+        }
+        {
+          type = "httpd";
+          name = "HTTP Stream";
+          encoder = "lame";
+          port = "8006";
+          bitrate = "128000";
+          format = "44100:16:2";
+        }
+        {
+          type = "pipewire";
+          name = "Pipewire Output";
+        }
+      ];
+    };
   };
 
   # See https://wiki.nixos.org/wiki/MPD PipeWire workaround section
