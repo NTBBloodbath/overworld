@@ -23,6 +23,7 @@
         devenv
         vscode.fhs
         penpot-desktop
+        dbeaver-bin
         alejandra # Nix formatter
         inputs.norgolith.packages.x86_64-linux.default
         chromium # Separate browser for work
