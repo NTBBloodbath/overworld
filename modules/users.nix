@@ -48,6 +48,7 @@
         protonvpn-gui # Goofy ahh VPN service need
         qbittorrent
         bagels # Expenses tracker
+        logseq # Note taking
       ];
     };
   };

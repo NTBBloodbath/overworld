@@ -280,7 +280,11 @@
   "brightnessDevicePins": {},
   "wifiNetworkPins": {},
   "bluetoothDevicePins": {},
-  "audioInputDevicePins": {},
+  "audioInputDevicePins": {
+    "preferredInput": [
+      "alsa_input.usb-MV-SILICON_fifine_Microphone_20190808-00.analog-stereo"
+    ]
+  },
   "audioOutputDevicePins": {},
   "gtkThemingEnabled": false,
   "qtThemingEnabled": false,
