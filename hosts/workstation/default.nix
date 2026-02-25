@@ -40,8 +40,8 @@
       ".config/fastfetch".source = ../../etc/fastfetch;
       # ".config/fish".source = ../../etc/fish;
       ".config/ghostty".source = ../../etc/ghostty;
-      ".config/git".source = ../../etc/git;
-      ".config/jj".source = ../../etc/jj;
+      ".config/git/config".source = ../../etc/git/config;
+      ".config/jj/config.toml".source = ../../etc/jj/config.toml;
       ".config/MangoHud".source = ../../etc/MangoHud;
       ".config/mpv".source = ../../etc/mpv;
       ".config/niri".source = ../../etc/niri;
