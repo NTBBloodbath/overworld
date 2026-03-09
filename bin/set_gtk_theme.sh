@@ -12,17 +12,17 @@ if [ "${current_hour}" -ge 18 ] || [ "${current_hour}" -lt 6 ]; then
     gsettings set org.gnome.desktop.interface color-scheme prefer-dark
     if [ "$(qs list --all)" != "No running instances." ]; then
         echo "Setting Quickshell theme to dark..."
-        qs -c DankMaterialShell ipc call theme dark
+        dms ipc call theme dark
         echo "Setting Quickshell night light to true..."
-        qs -c DankMaterialShell ipc call night enable
+        dms ipc call night enable
     fi
 else
     echo "Setting system color-scheme to light..."
     gsettings set org.gnome.desktop.interface color-scheme prefer-light
     if [ "$(qs list --all)" != "No running instances." ]; then
         echo "Setting Quickshell theme to light..."
-        qs -c DankMaterialShell ipc call theme light
+        dms ipc call theme light
         echo "Setting Quickshell night light to false..."
-        qs -c DankMaterialShell ipc call night disable
+        dms ipc call night disable
     fi
 fi
