@@ -210,7 +210,7 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 // spawn-at-startup "pkexec" "swayosd-libinput-backend" // only required for caps, num and scroll locks
-spawn-at-startup "swayosd-server"
+// spawn-at-startup "swayosd-server"
 spawn-at-startup "ghostty"
 spawn-at-startup "xwayland-satellite"
 // Required for clipboard history integration
@@ -221,7 +221,7 @@ spawn-at-startup "bash" "-c" "mpDris2 --music-dir=/mnt/Storage/Music &"
 spawn-at-startup "dms" "run"
 // Currently, my wallpaper is being managed by quickshell. This swaybg is for a blurred version
 // of my wallpaper so that the overview looks like GNOME
-spawn-at-startup "swaybg" "--mode" "stretch" "--image" "~/overworld/share/wallpapers/deadlock_banner_blurred.png"
+// spawn-at-startup "swaybg" "--mode" "stretch" "--image" "~/overworld/share/wallpapers/deadlock_banner_blurred.png"
 // spawn-at-startup "swaybg" "--mode" "stretch" "--image" "~/.local/share/wallpapers/1387138.png"
 // spawn-at-startup "mpvpaper" "-o" "--loop-playlist" "HDMI-A-1" "~/.local/share/wallpapers/kaguya-card-kaguyasama-love-is-war.mp4"
 
@@ -308,6 +308,12 @@ window-rule {
 
 layer-rule {
     match namespace="^wallpaper$"
+
+    place-within-backdrop true
+}
+
+layer-rule {
+    match namespace="dms:blurwallpaper"
 
     place-within-backdrop true
 }

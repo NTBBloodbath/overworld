@@ -49,6 +49,7 @@
         qbittorrent
         bagels # Expenses tracker
         logseq # Note taking
+        linux-wallpaperengine # Wallpaper Engine
       ];
     };
   };
