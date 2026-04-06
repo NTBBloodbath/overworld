@@ -15,10 +15,19 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     # Norgolith
-    norgolith.url = "github:NTBBloodbath/norgolith";
+    norgolith = {
+      url = "github:NTBBloodbath/norgolith";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Hjem
     hjem.url = "github:feel-co/hjem";
+
+    # Niri
+    niri-git = {
+      url = "github:YaLTeR/niri";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Quickshell nightly
     quickshell = {
@@ -31,10 +40,6 @@
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # dms-cli = {
-    #   url = "github:AvengeMedia/danklinux";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
 
     # System monitor for DankMaterialShell
     dgop = {
@@ -56,9 +61,9 @@
     neovim-nightly-overlay,
     norgolith,
     hjem,
+    niri-git,
     quickshell,
     dank-material-shell,
-    # dms-cli,
     dgop,
     oskars-dotfiles,
     ...

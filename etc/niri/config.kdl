@@ -213,6 +213,7 @@ layout {
 // spawn-at-startup "swayosd-server"
 spawn-at-startup "ghostty"
 spawn-at-startup "xwayland-satellite"
+spawn-at-startup "chameleos"
 // Required for clipboard history integration
 spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 // So that Playerctl can interact with MPD
@@ -306,6 +307,14 @@ window-rule {
     open-on-workspace "gaming"
 }
 
+window-rule {
+    match app-id=r#"^com\.mitchellh\.ghostty$"#
+
+    background-effect {
+        blur true
+    }
+}
+
 layer-rule {
     match namespace="^wallpaper$"
 
@@ -317,6 +326,23 @@ layer-rule {
 
     place-within-backdrop true
 }
+
+// This shit is bugged right now
+// layer-rule {
+//     match namespace="dms:bar"
+//     match namespace="dms:dock"
+//     match namespace="dms:notification-popup"
+//     match namespace="dms:osd"
+//     match namespace="dms:slideout"
+//     match namespace="dms:tooltip"
+//     match namespace="dms:toast"
+//     match namespace="dms:tray-menu-window"
+//     match namespace="dock-context-menu"
+//
+//     background-effect {
+//         blur true
+//     }
+// }
 
 overview {
     // zoom 0.8
@@ -545,9 +571,15 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
+    // Screenshot
     Print { screenshot; }
     Ctrl+Print { screenshot-screen write-to-disk=false; }
     Alt+Print { screenshot-window write-to-disk=false; }
+
+    Mod+F1 { spawn-sh "chamel toggle"; }
+    Mod+F2 { spawn-sh "chamel undo"; }
+    Mod+F3 { spawn-sh "chamel clear"; }
+    Mod+F4 { spawn-sh "chamel exit"; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+Q { quit; }

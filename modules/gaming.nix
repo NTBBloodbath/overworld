@@ -25,7 +25,6 @@
       devilutionx # Stay a while and listen
       jetbrains.jdk # OpenJDK does not ship JavaFX for Minecraft
       mcrcon # RCON server for Minecraft servers
-      deadlock-mod-manager
     ];
   };
 }

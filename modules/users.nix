@@ -25,7 +25,7 @@
         penpot-desktop
         dbeaver-bin
         alejandra # Nix formatter
-        inputs.norgolith.packages.x86_64-linux.default
+        # inputs.norgolith.packages.x86_64-linux.default # Borked right now, I have to take a look
         chromium # Separate browser for work
         # Social
         slack
@@ -50,6 +50,7 @@
         bagels # Expenses tracker
         logseq # Note taking
         linux-wallpaperengine # Wallpaper Engine
+        chameleos # Screen annotation tool
       ];
     };
   };

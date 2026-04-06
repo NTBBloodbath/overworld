@@ -38,7 +38,10 @@
   ];
 
   # Niri, scrollable-tiling Wayland compositor
-  programs.niri.enable = true;
+  programs.niri = {
+    enable = true;
+    package = inputs.niri-git.packages.x86_64-linux.default;
+  };
 
   environment.systemPackages = with pkgs;
     [
