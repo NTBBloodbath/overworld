@@ -315,6 +315,14 @@ window-rule {
     }
 }
 
+window-rule {
+    match app-id=r#"^firefox-devedition$"#
+
+    background-effect {
+        blur true
+    }
+}
+
 layer-rule {
     match namespace="^wallpaper$"
 
