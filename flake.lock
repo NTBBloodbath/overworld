@@ -783,6 +783,27 @@
         "type": "github"
       }
     },
+    "phoenix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1774988251,
+        "narHash": "sha256-mE6hddBs1tUXtuYciIKPVgaf8R6Ggp4l73ycK9L4lMM=",
+        "ref": "pages",
+        "rev": "9a7e49256837ce1928265734be1ea110c76b8aa4",
+        "revCount": 2770,
+        "type": "git",
+        "url": "https://gitlab.com/celenityy/Phoenix"
+      },
+      "original": {
+        "ref": "pages",
+        "type": "git",
+        "url": "https://gitlab.com/celenityy/Phoenix"
+      }
+    },
     "playit-agent-source": {
       "flake": false,
       "locked": {
@@ -873,6 +894,7 @@
         "nixpkgs": "nixpkgs_3",
         "norgolith": "norgolith",
         "oskars-dotfiles": "oskars-dotfiles",
+        "phoenix": "phoenix",
         "playit-nixos-module": "playit-nixos-module",
         "quickshell": "quickshell_2"
       }

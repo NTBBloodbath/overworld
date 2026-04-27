@@ -47,6 +47,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Phoenix for Firefox
+    phoenix = {
+      url = "git+https://gitlab.com/celenityy/Phoenix?ref=pages";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # SpotX-Bash overlay
     oskars-dotfiles = {
       url = "github:oskardotglobal/.dotfiles/nix";
@@ -65,6 +71,7 @@
     quickshell,
     dank-material-shell,
     dgop,
+    phoenix,
     oskars-dotfiles,
     ...
   } @ inputs: {
@@ -78,6 +85,7 @@
           ./hosts/workstation
           playit-nixos-module.nixosModules.default
           hjem.nixosModules.default
+          phoenix.nixosModules.default
           # Spotify patched with SpotX-Bash
           ({pkgs, ...}: {
             nixpkgs.overlays = [oskars-dotfiles.overlays.spotx];
@@ -93,6 +101,7 @@
           ./hosts/macbook
           nixos-hardware.nixosModules.apple-macbook-pro-11-4
           hjem.nixosModules.default
+          phoenix.nixosModules.default
         ];
       };
     };
