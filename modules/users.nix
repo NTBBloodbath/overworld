@@ -49,6 +49,7 @@
         qbittorrent
         bagels # Expenses tracker
         logseq # Note taking
+        obsidian # Better note taking
         linux-wallpaperengine # Wallpaper Engine
         chameleos # Screen annotation tool
       ];

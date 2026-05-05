@@ -13,6 +13,9 @@
   # during the initramfs phase
   hardware.amdgpu.initrd.enable = config.overworld.amd.enable;
 
+  # Xone driver for Gulikit dongle that emulates Xbox protocol
+  hardware.xone.enable = true;
+
   # Bootloader
   boot = {
     loader = {
