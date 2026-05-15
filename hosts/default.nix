@@ -171,6 +171,16 @@
       #     patches = [ ./change-hello-to-hi.patch ];
       #   });
       # })
+      #
+      # =======================================================================
+      #
+      # Fuck openldap, God bless https://github.com/JustinKnueppel for his patch
+      # NOTE: Remove once https://github.com/NixOS/nixpkgs/issues/514113 is closed
+      (_: prev: {
+        openldap = prev.openldap.overrideAttrs {
+          doCheck = !prev.stdenv.hostPlatform.isi686;
+        };
+      })
     ];
 
     # Configure nixpkgs instance
