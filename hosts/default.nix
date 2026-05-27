@@ -93,6 +93,8 @@
       fzf
       wget
       btop
+      tmux
+      tmuxp
       ripgrep
       tealdeer
       pciutils
