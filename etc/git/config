@@ -39,6 +39,9 @@
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
+    # Quick fix for fix commits
+    fixup = "!f() { git commit --fixup=$1 && GIT_SEQUENCE_EDITOR=: git rebase -i --autosquash $1~; }; f"
+
 	# Switch to a branch, creating it if necessary
 	sb = "!f() { git switch --create \"$1\" 2>/dev/null || git switch \"$1\"; }; f"
 
@@ -61,6 +64,8 @@
 	color = auto
 
 [core]
+	pager = delta
+
     # Set Neovim as the Git editor
 	editor = nvim
 	whitespace = -trailing-space
@@ -71,15 +76,31 @@
 
 [help]
 	# Automatically correct and execute mistyped commands.
-	autocorrect = 1
+	autocorrect = prompt
+
+[interactive]
+    diffFilter = delta --color-only
 
 [diff]
 	mnemonicPrefix = true
+    colorMoved = true
 	renames = true
 	wordRegex = .
 	submodule = log
+	context = 10
+	algorithm = histogram
+
+[delta]
+    navigate = true
+    hyperlinks = true
+    line-numbers = true
+    side-by-side = true
+    true-color = always
 
 [fetch]
+    all = true
+    prune = true
+    pruneTags = true
     recurseSubmodules = on-demand
 
 [branch]
@@ -95,17 +116,31 @@
 [log]
 	abbrevCommit = true
 	follow = true
-	decorate = false
+	decorate = short
+
+[column]
+	ui = auto
+	branch = always
+	tag = always
 
 [merge]
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+	conflictStyle = zdiff3
+	tool = nvimdiff
 
 [mergetool]
 	keepBackup = false
 	keepTemporaries = false
 	writeToTemp = true
 	prompt = false
+
+[mergetool "nvimdiff"]
+	cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c 'wincmd w' -c 'wincmd J'
+
+[rerere]
+	enabled = true         # Remember how you resolved conflicts and reapply them
+	autoupdate = true      # After resolving, it automatically marks as resolved
 
 [push]
 	# https://git-scm.com/docs/git-config#git-config-pushdefault
@@ -123,6 +158,7 @@
 	upstream = cyan
 
 [tag]
+    gpgSign = true
 	sort = version:refname
 
 [versionsort]
@@ -150,11 +186,18 @@
 [credential]
 	helper = "cache --timeout 86400"
 
-[pack]
-	threads = 2
+[transfer]
+    # Verify the integrity of everything
+	fsckObjects = true
 
 [pull]
 	rebase = true
+
+[rebase]
+	autoStash = true       # Automatic stash before rebase/merge with dirty work
+	autosquash = true      # reorganizes fixup! commits in interactive rebase
+	updateRefs = true      # updates stacked branches (very useful with stacked PRs)
+    missingCommitsCheck = warn
 
 [gpg]
 	program = gpg2

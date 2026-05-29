@@ -95,6 +95,7 @@
       btop
       tmux
       tmuxp
+      delta
       ripgrep
       tealdeer
       pciutils
