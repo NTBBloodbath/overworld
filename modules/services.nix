@@ -57,7 +57,7 @@ in {
   # MPD service
   services.mpd = {
     enable = config.overworld.mpd.enable;
-    startWhenNeeded = true;
+    startWhenNeeded = false;
 
     user = "amartin";
     openFirewall = true;
@@ -66,6 +66,7 @@ in {
       bind_to_address = "any";
       music_directory = "/mnt/Storage/Music";
       playlist_directory = "/mnt/Storage/Playlists";
+      db_file = "/home/amartin/.local/share/mpd/database";
       audio_output = [
         {
           type = "fifo";
@@ -90,9 +91,15 @@ in {
   };
 
   # See https://wiki.nixos.org/wiki/MPD PipeWire workaround section
-  systemd.services.mpd.environment = {
-    # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
-    XDG_RUNTIME_DIR = "/run/user/1000";
+  systemd.services.mpd = {
+    # Delay MPD so that it does not mount my /mnt/Storage during boot
+    # since fsck on vFAT partitions makes my boot time slow as hell
+    wantedBy = [ "graphical.target" ];
+    after = [ "graphical.target" "network.target" "sound.target" ];
+    environment = {
+      # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
+      XDG_RUNTIME_DIR = "/run/user/1000";
+    };
   };
 
   # Macbook specific services

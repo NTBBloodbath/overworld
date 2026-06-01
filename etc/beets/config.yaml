@@ -1,5 +1,5 @@
 directory: /mnt/Storage/Music
-library: /mnt/Storage/Music/library.db
+library: /home/amartin/.local/share/beets/library.db
 
 import:
   copy: yes
