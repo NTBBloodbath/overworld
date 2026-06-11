@@ -58,6 +58,12 @@
       url = "github:oskardotglobal/.dotfiles/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Serena MCP
+    serena = {
+      url = "github:oraios/serena";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -73,6 +79,7 @@
     dgop,
     phoenix,
     oskars-dotfiles,
+    serena,
     ...
   } @ inputs: {
     nixosConfigurations = {

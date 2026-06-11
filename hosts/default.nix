@@ -97,6 +97,7 @@
       tmuxp
       delta
       ripgrep
+      nvme-cli
       tealdeer
       pciutils
       hyperfine

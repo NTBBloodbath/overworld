@@ -26,6 +26,8 @@
         dbeaver-bin
         alejandra # Nix formatter
         # inputs.norgolith.packages.x86_64-linux.default # Borked right now, I have to take a look
+        inputs.serena.packages.x86_64-linux.default
+        opencode
         chromium # Separate browser for work
         # Social
         slack
