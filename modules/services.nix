@@ -54,6 +54,17 @@ in {
   # Cloudflare WARP
   services.cloudflare-warp.enable = config.overworld.cloudflare.enable;
 
+  # Jellyfin
+  services.jellyfin = {
+    enable = config.overworld.jellyfin.enable;
+    hardwareAcceleration = {
+      enable = true;
+      type = "vaapi";
+      device = "/dev/dri/renderD128";
+    };
+    openFirewall = true;
+  };
+
   # MPD service
   services.mpd = {
     enable = config.overworld.mpd.enable;

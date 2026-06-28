@@ -11,6 +11,7 @@
       mpd.enable = true;
       lact.enable = true;
       cloudflare.enable = true;
+      jellyfin.enable = true;
       bluetoothOnBoot.enable = true;
     };
 

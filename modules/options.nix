@@ -13,6 +13,7 @@
     mpd.enable = lib.mkEnableOption "Whether to enable MPD service";
     lact.enable = lib.mkEnableOption "Whether to enable LACT service";
     cloudflare.enable = lib.mkEnableOption "Whether to enable Cloudflare WARP service";
+    jellyfin.enable = lib.mkEnableOption "Whether to enable Jellyfin media server service";
     bluetoothOnBoot.enable = lib.mkEnableOption "Whether to power Bluetooth on boot";
   };
 }
