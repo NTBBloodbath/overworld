@@ -16,8 +16,7 @@
 
     # Norgolith
     norgolith = {
-      url = "github:NTBBloodbath/norgolith";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:norgolith/core";
     };
 
     # Hjem
@@ -49,7 +48,7 @@
 
     # Phoenix for Firefox
     phoenix = {
-      url = "git+https://gitlab.com/celenityy/Phoenix?ref=pages";
+      url = "git+https://codeberg.org/celenity/Phoenix?ref=pages";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

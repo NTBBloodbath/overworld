@@ -14,11 +14,10 @@
       lua51Packages.luarocks
     ]
   );
-  # parsers = pkgs.tree-sitter.withPlugins (p: [
-  #   p.tree-sitter-norg
-  #   p.tree-sitter-norg-meta
-  # ]);
-  # vim.opt.runtimepath:append("${parsers}")
+  parsers = pkgs.tree-sitter.withPlugins (p: [
+    p.tree-sitter-norg
+    p.tree-sitter-norg-meta
+  ]);
   neovimConfig = pkgs.neovimUtils.makeNeovimConfig {
     extraLuaPackages = p: [p.magick]; # I can't have rocks.nvim install it b/c that version will not find imagemagick c binary
     customLuaRC =
@@ -28,6 +27,7 @@
       ''
         vim.g.nix_packdir = "${pkgs.vimUtils.packDir pkgs.neovim-stable.passthru.packpathDirs}"
         vim.cmd.source(('~/.config/%s/init.lua'):format(vim.env.NVIM_APPNAME or 'nvim'))
+        vim.opt.runtimepath:append("${parsers}")
       '';
   };
   fullConfig = (

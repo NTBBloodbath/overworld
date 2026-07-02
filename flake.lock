@@ -717,6 +717,22 @@
     },
     "nixpkgs_4": {
       "locked": {
+        "lastModified": 1784120854,
+        "narHash": "sha256-KesHgItiZPgGX740axSiQLcIQ8D24MDqNpkKYWIek8k=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "753cc8a3a87467296ddd1fa93f0cc3e81120ee46",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_5": {
+      "locked": {
         "lastModified": 1775710090,
         "narHash": "sha256-ar3rofg+awPB8QXDaFJhJ2jJhu+KqN/PRCXeyuXR76E=",
         "owner": "nixos",
@@ -731,7 +747,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_5": {
+    "nixpkgs_6": {
       "locked": {
         "lastModified": 1778869304,
         "narHash": "sha256-30sZNZoA1cqF5JNO9fVX+wgiQYjB7HJqqJ4ztCDeBZE=",
@@ -750,28 +766,26 @@
     "norgolith": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1779211955,
-        "narHash": "sha256-QfFkXFNPpo4fVOXRQt4d+QXnlcrCRTQl8HgDSjk+pnk=",
-        "owner": "NTBBloodbath",
-        "repo": "norgolith",
-        "rev": "7ae5f6626e557c8cfffe76207f0ef0421262788d",
+        "lastModified": 1784213556,
+        "narHash": "sha256-YtctWnuXpe+dciigCR1ZelL5E+OS86zwvMBwNVGSzB4=",
+        "owner": "norgolith",
+        "repo": "core",
+        "rev": "147e058fff8d9bcab61328cc65b1d1f3ad82dbf1",
         "type": "github"
       },
       "original": {
-        "owner": "NTBBloodbath",
-        "repo": "norgolith",
+        "owner": "norgolith",
+        "repo": "core",
         "type": "github"
       }
     },
     "nur": {
       "inputs": {
         "flake-parts": "flake-parts_5",
-        "nixpkgs": "nixpkgs_4"
+        "nixpkgs": "nixpkgs_5"
       },
       "locked": {
         "lastModified": 1776252196,
@@ -824,24 +838,24 @@
         ]
       },
       "locked": {
-        "lastModified": 1779410706,
-        "narHash": "sha256-VgcPJph8RsLFx0PMWJZHwPFDgANffrFwF0FUz+ZgqcQ=",
+        "lastModified": 1783993774,
+        "narHash": "sha256-H6KyLUuKJGP+PjHtwiIJ033z51tja3v5dXDVYbiUu1I=",
         "ref": "pages",
-        "rev": "9dc1e63fd020bed37b071abc2b6299840484f21f",
-        "revCount": 3003,
+        "rev": "0331899e5023e671bb66bb565189ca9d764ec018",
+        "revCount": 3163,
         "type": "git",
-        "url": "https://gitlab.com/celenityy/Phoenix"
+        "url": "https://codeberg.org/celenity/Phoenix"
       },
       "original": {
         "ref": "pages",
         "type": "git",
-        "url": "https://gitlab.com/celenityy/Phoenix"
+        "url": "https://codeberg.org/celenity/Phoenix"
       }
     },
     "playit-nixos-module": {
       "inputs": {
         "flake-parts": "flake-parts_6",
-        "nixpkgs": "nixpkgs_5",
+        "nixpkgs": "nixpkgs_6",
         "systems": "systems_5"
       },
       "locked": {

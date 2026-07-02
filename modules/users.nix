@@ -25,10 +25,12 @@
         penpot-desktop
         dbeaver-bin
         alejandra # Nix formatter
-        # inputs.norgolith.packages.x86_64-linux.default # Borked right now, I have to take a look
+        inputs.norgolith.packages.x86_64-linux.default
+        inputs.norgolith.packages.x86_64-linux.norgolith-mcp
         inputs.serena.packages.x86_64-linux.default
         opencode
         chromium # Separate browser for work
+        numbat
         # Social
         slack
         vesktop
@@ -47,10 +49,9 @@
         # Misc
         newsflash # RSS Reader
         bottles # Wine made easy
-        protonvpn-gui # Goofy ahh VPN service need
+        proton-vpn # Goofy ahh VPN service need
         qbittorrent
         bagels # Expenses tracker
-        logseq # Note taking
         obsidian # Better note taking
         linux-wallpaperengine # Wallpaper Engine
         chameleos # Screen annotation tool
