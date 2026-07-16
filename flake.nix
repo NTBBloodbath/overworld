@@ -5,6 +5,8 @@
     # Nixpkgs unstable
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
+    nixpkgs-stable.url = "github:nixos/nixpkgs?ref=26.05";
+
     # NixOS hardware configurations
     nixos-hardware.url = "github:nixos/nixos-hardware?ref=master";
 
@@ -67,6 +69,7 @@
 
   outputs = {
     nixpkgs,
+    nixpkgs-stable,
     nixos-hardware,
     playit-nixos-module,
     neovim-nightly-overlay,

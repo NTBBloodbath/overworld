@@ -48,7 +48,7 @@
         nicotine-plus # Soulseek client
         # Misc
         newsflash # RSS Reader
-        bottles # Wine made easy
+        inputs.nixpkgs-stable.legacyPackages.${system}.bottles # Wine made easy
         proton-vpn # Goofy ahh VPN service need
         qbittorrent
         bagels # Expenses tracker

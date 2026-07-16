@@ -190,6 +190,11 @@
     # Configure nixpkgs instance
     config = {
       allowUnfree = true;
+
+      # Electron shitfest, I sure love this bullshit
+      permittedInsecurePackages = [
+        "electron-40.10.5"
+      ];
     };
   };
 }
