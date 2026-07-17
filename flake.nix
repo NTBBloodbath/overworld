@@ -2,9 +2,8 @@
   description = "Goofy ahh system configuration";
 
   inputs = {
-    # Nixpkgs unstable
+    # Nixpkgs - stable is only for bottles since these fuckers keep pushing broken stuff
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-
     nixpkgs-stable.url = "github:nixos/nixpkgs?ref=26.05";
 
     # NixOS hardware configurations
@@ -65,6 +64,11 @@
       url = "github:oraios/serena";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -82,6 +86,7 @@
     phoenix,
     oskars-dotfiles,
     serena,
+    zen-browser,
     ...
   } @ inputs: {
     nixosConfigurations = {

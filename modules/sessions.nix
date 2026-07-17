@@ -76,5 +76,9 @@
   environment.variables = {
     NIXOS_OZONE_WL = "1";
     ELECTRON_LAUNCH_FLAGS = "--enable-wayland-ime --wayland-text-input-version=3 --enable-features=WaylandLinuxDrmSyncobj";
+    GTK_IM_MODULE = "ibus";
+    QT_IM_MODULE = "ibus";
+    XMODIFIERS = "@im=ibus";
+    SDL_IM_MODULE = "ibus";
   };
 }

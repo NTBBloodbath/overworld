@@ -612,7 +612,7 @@ hotkey-overlay {
 }
 
 // environment {
-//     DISPLAY ":0"
+//     // DISPLAY ":0"
 // }
 
 // Workspaces

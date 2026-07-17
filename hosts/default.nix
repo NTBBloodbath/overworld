@@ -12,6 +12,13 @@
 
   # Internationalisation properties
   i18n = {
+    inputMethod = {
+      enable = true;
+      type = "ibus";
+      ibus.engines = with pkgs.ibus-engines; [
+        uniemoji
+      ];
+    };
     defaultLocale = "en_US.UTF-8";
     extraLocaleSettings = {
       LC_ADDRESS = "es_VE.UTF-8";
@@ -38,7 +45,7 @@
     enable = true;
     clean = {
       enable = true;
-      extraArgs = "--keep-since 7d --keep 3";
+      extraArgs = "--keep-since 7d --keep 3 --optimise";
     };
     flake = "/home/amartin/overworld";
   };
