@@ -48,6 +48,11 @@ in {
     interval = "weekly";
   };
 
+  # Nautilus trash and VFS
+  services.gvfs.enable = true;
+  # Mount external drives in Nautilus sidebar
+  services.udisks2.enable = true;
+
   # Resolved for OpenVPN
   services.resolved.enable = true;
 

@@ -29,15 +29,19 @@
   # Niri, scrollable-tiling Wayland compositor
   programs.niri = {
     enable = true;
-    package = if config.overworld.macbook.enable then pkgs.niri else inputs.niri-git.packages.x86_64-linux.default;
+    package = pkgs.niri;
+    # package = if config.overworld.macbook.enable then pkgs.niri else inputs.niri-git.packages.x86_64-linux.default;
   };
 
   environment.systemPackages = with pkgs;
     [
       # --- Yabbadabbadooo
-      gvfs
+      eog
+      glib # gsettings, etc
       baobab
+      evince
       nautilus
+      celluloid # mpv gtk
       seahorse
       adwaita-fonts
       gnome-disk-utility

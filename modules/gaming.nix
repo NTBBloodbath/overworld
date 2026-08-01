@@ -20,7 +20,7 @@
     environment.systemPackages = with pkgs; [
       heroic # Epic games launcher
       mangohud # Performance monitoring
-      mindustry-wayland # Mindustry
+      # mindustry-wayland # Mindustry BROKEN
       osu-lazer-bin # Osu! my beloved
       devilutionx # Stay a while and listen
       jetbrains.jdk # OpenJDK does not ship JavaFX for Minecraft

@@ -25,7 +25,7 @@
         penpot-desktop
         dbeaver-bin
         alejandra # Nix formatter
-        inputs.norgolith.packages.x86_64-linux.default
+        # inputs.norgolith.packages.x86_64-linux.default  # BROKEN: libgit2 is too old in nixpkgs
         inputs.norgolith.packages.x86_64-linux.norgolith-mcp
         inputs.serena.packages.x86_64-linux.default
         opencode
