@@ -7,6 +7,9 @@
     ../modules
   ];
 
+  # AMD Microcode ahh shit
+  hardware.enableRedistributableFirmware = true;
+
   # Timezone
   time.timeZone = "America/Caracas";
 
