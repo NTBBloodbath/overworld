@@ -123,7 +123,7 @@
 
   # Binary cache to improve the build time of playit
   nixConfig = {
-    extra-substituters = ["https://playit-nixos-module.cachix.org"];
-    extra-trusted-public-keys = ["playit-nixos-module.cachix.org-1:22hBXWXBbd/7o1cOnh+p0hpFUVk9lPdRLX3p5YSfRz4="];
+    extra-substituters = [ "https://playit-nixos-module.cachix.org" ];
+    extra-trusted-public-keys = [ "playit-nixos-module.cachix.org-1:22hBXWXBbd/7o1cOnh+p0hpFUVk9lPdRLX3p5YSfRz4=" ];
   };
 }
