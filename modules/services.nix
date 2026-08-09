@@ -59,14 +59,6 @@ in {
   # Cloudflare WARP
   services.cloudflare-warp.enable = config.overworld.cloudflare.enable;
 
-  # Playit service
-  # FIXME: this will fucking blow up my macbook, fix later
-  services.playit = {
-    enable = true;
-    secretPath = "/home/amartin/.config/playit_gg/playit.toml";
-    # secretPath = config.age.secrets.playit-secret.path;
-  };
-
   # Jellyfin
   services.jellyfin = {
     enable = config.overworld.jellyfin.enable;

@@ -16,6 +16,7 @@
   );
   libstdcpp = lib.makeLibraryPath [pkgs.gcc.cc.lib];
   parsers = pkgs.tree-sitter.withPlugins (p: [
+    p.tree-sitter-html
     p.tree-sitter-norg
     p.tree-sitter-norg-meta
   ]);
@@ -31,6 +32,7 @@
         -- Nix-built grammar dirs are flat (no parser/ subdir), so rocks.nvim
         -- can't see them; register explicitly. norg.so links libstdc++, which
         -- is exported via LD_LIBRARY_PATH below.
+        vim.treesitter.language.add("html", { path = "${parsers}/html.so" })
         vim.treesitter.language.add("norg", { path = "${parsers}/norg.so" })
         vim.treesitter.language.add("norg_meta", { path = "${parsers}/norg_meta.so" })
         vim.opt.runtimepath:append("${parsers}")

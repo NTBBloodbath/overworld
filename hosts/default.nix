@@ -43,6 +43,11 @@
     enableSSHSupport = true;
   };
 
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   # Nix Helper
   programs.nh = {
     enable = true;
@@ -99,8 +104,10 @@
       jq
       fd
       zf
+      bat
       eza
       fzf
+      lsof
       wget
       btop
       tmux
