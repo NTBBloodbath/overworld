@@ -1,7 +1,7 @@
 {lib, ...}: {
   options.overworld = {
     # Laptop specific configurations
-    macbook.enable = lib.mkEnableOption "Enable Macbook related programs and services";
+    tp.enable = lib.mkEnableOption "Enable Thinkpad T14 Gen 1 (Intel) related programs and services";
 
     # Desktop specific configurations (Ryzen, AMDGPU)
     amd.enable = lib.mkEnableOption "Enable AMD hardware related configurations";

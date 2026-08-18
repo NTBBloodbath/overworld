@@ -118,39 +118,31 @@ in {
     };
   };
 
-  # Macbook specific services
-  #
-  # Macbook webcam support
-  hardware.facetimehd.enable = config.overworld.macbook.enable;
-
   # Fan control
-  services.mbpfan = {
-    enable = config.overworld.macbook.enable;
-    aggressive = false;
-    # Even more aggressive settings for the fan
-    settings.general = {
-      low_temp = 45;
-      high_temp = 55;
-      max_temp = 65;
-    };
+  services.thinkfan = {
+    enable = config.overworld.tp.enable;
   };
 
   # Touchpad (enabled default in most desktopManager)
   services.libinput = {
     enable = true;
-    touchpad.naturalScrolling = true;
+    touchpad = {
+      naturalScrolling = true;
+      clickMethod = "clickfinger";
+    };
   };
 
   # Prevent overheating
-  services.thermald.enable = config.overworld.macbook.enable;
+  services.thermald.enable = config.overworld.tp.enable;
 
   # Power management
   services.power-profiles-daemon.enable =
-    if config.overworld.macbook.enable
+    if config.overworld.tp.enable
     then false
     else true;
+  services.upower.enable = config.overworld.tp.enable;
   services.tlp = {
-    enable = config.overworld.macbook.enable;
+    enable = config.overworld.tp.enable;
     settings = {
       CPU_SCALING_GOVERNOR_ON_AC = "performance";
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";

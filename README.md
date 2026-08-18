@@ -41,7 +41,7 @@ sudo nixos-rebuild switch --flake .#workstation
 ```
 
 Currently, there are two available hosts on my flake system configurations, which are the following:
-- `taiga` - Macbook pro 11,4
+- `taiga` - Lenovo Thinkpad T14 Gen 1 (Intel)
 - `tundra` - Desktop workstation
 
 > [!IMPORTANT]

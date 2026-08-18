@@ -7,7 +7,7 @@
     ../modules
   ];
 
-  # AMD Microcode ahh shit
+  # AMD Microcode ahh shit + Thonkpad wifi drivers
   hardware.enableRedistributableFirmware = true;
 
   # Timezone

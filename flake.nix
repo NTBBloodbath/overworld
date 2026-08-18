@@ -106,14 +106,14 @@
           })
         ];
       };
-      # Macbook
+      # Thinkpad
       taiga = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts
-          ./hosts/macbook
-          nixos-hardware.nixosModules.apple-macbook-pro-11-4
+          ./hosts/thinkpad-t14-gen1
+          nixos-hardware.nixosModules.lenovo-thinkpad-t14-intel-gen1
           hjem.nixosModules.default
           phoenix.nixosModules.default
         ];

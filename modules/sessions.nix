@@ -12,10 +12,10 @@
 
     # Configure keymap in X11
     xkb =
-      if config.overworld.macbook.enable
+      if config.overworld.tp.enable
       then {
         layout = "us";
-        variant = "mac";
+        variant = "";
       }
       else {
         layout = "latam";
@@ -30,7 +30,6 @@
   programs.niri = {
     enable = true;
     package = pkgs.niri;
-    # package = if config.overworld.macbook.enable then pkgs.niri else inputs.niri-git.packages.x86_64-linux.default;
   };
 
   environment.systemPackages = with pkgs;
@@ -58,7 +57,7 @@
       cliphist # Clipboard manager, required by DankMaterialShell
       matugen # Material You color generator, required by DankMaterialShell
     ]
-    ++ (lib.optionals config.overworld.macbook.enable [pkgs.brightnessctl]);
+    ++ (lib.optionals config.overworld.tp.enable [pkgs.brightnessctl]);
 
   # Automatically login
   services.displayManager.autoLogin = {

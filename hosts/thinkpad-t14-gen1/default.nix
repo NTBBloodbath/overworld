@@ -5,15 +5,13 @@
 
   config = {
     # Enable conditional configurations
-    overworld.macbook.enable = true;
+    overworld.tp.enable = true;
 
     # Enable OpenGL and hardware accelerated graphics drivers
     hardware.graphics = {
       enable = true;
       enable32Bit = true;
-      extraPackages = with pkgs; [
-        mesa
-      ];
+      extraPackages = [ pkgs.mesa ];
     };
 
     # System hostname
@@ -22,16 +20,16 @@
     # $HOME management
     hjem.users.amartin.files = {
       # Configuration files
-      ".config/beets".source = ../../etc/beets;
-      ".config/DankMaterialShell".source = ../../etc/DankMaterialShell-mbp;
+      ".config/beets/config.yaml".source = ../../etc/beets/config.yaml;
+      ".config/DankMaterialShell/settings.json".source = ../../etc/DankMaterialShell-tp/settings.json;
       ".config/fastfetch".source = ../../etc/fastfetch;
       # ".config/fish".source = ../../etc/fish;
       ".config/ghostty".source = ../../etc/ghostty;
-      ".config/git".source = ../../etc/git;
-      ".config/jj".source = ../../etc/jj;
+      ".config/git/config".source = ../../etc/git/config;
+      ".config/jj/config.toml".source = ../../etc/jj/config.toml;
       ".config/MangoHud".source = ../../etc/MangoHud;
       ".config/mpv".source = ../../etc/mpv;
-      ".config/niri".source = ../../etc/niri-mbp;
+      ".config/niri".source = ../../etc/niri-tp;
       ".config/systemd".source = ../../etc/systemd;
 
       # Bin scripts

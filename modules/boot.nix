@@ -67,7 +67,6 @@
         "loglevel=3"
         "rd.udev.log_priority=3"
         "slab_nomerge"
-        "pcie_aspm=off"
         "nvme_core.default_ps_max_latency_us=0"
         "nvme_core.admin_timeout=10"
         "pci=realloc,assign-busses"
@@ -76,6 +75,9 @@
         "8250.nr_uarts=0"
         # "cpufreq.default_governor=performance" # It seems like it is already the default in amd_pstate
       ]
+      ++ (lib.optionals (!config.overworld.tp.enable) [
+        "pcie_aspm=off"
+      ])
       ++ (lib.optionals config.overworld.amd.enable [
         "amdgpu.ppfeaturemask=0xffffffff"
         "amd_pstate=active"
@@ -88,7 +90,7 @@
   # Disable network wait service
   systemd.services.NetworkManager-wait-online.enable = false;
 
-  fileSystems = lib.mkIf (!config.overworld.macbook.enable) {
+  fileSystems = {
     "/mnt/Juegos" = {
       device = "/dev/disk/by-label/Juegos";
       fsType = "ext4";
@@ -106,12 +108,12 @@
   #
   # Using Xkb config is easier for macbok layout, and my desktop uses a latam spanish layout
   console = {
-    useXkbConfig = config.overworld.macbook.enable;
-    keyMap = lib.mkIf (!config.overworld.macbook.enable) "la-latin1";
+    useXkbConfig = config.overworld.tp.enable;
+    keyMap = lib.mkIf (!config.overworld.tp.enable) "la-latin1";
   };
 
   # Enable ZRAM
-  zramSwap.enable = true;
+  zramSwap.enable = !config.overworld.tp.enable; #true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
