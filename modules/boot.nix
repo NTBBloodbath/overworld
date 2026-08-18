@@ -35,11 +35,11 @@
       # NOTE: this does not seem to do lots of shit so I've disabled these
       includeDefaultModules = false;
       kernelModules = [ "nvme" "ext4" "vfat" ]; # vfat: avoids on-demand modprobe race when mounting /boot (EFI)
-      availableKernelModules = [ "xhci_pci" "crc32c" ]; # stripped: usb_storage pulls Seagate spin-up into initrd (+5s)
+      availableKernelModules = [ "xhci_pci" "crc32c" ] ++ (lib.optionals config.overworld.tp.enable [ "iwlwifi" ]); # stripped: usb_storage pulls Seagate spin-up into initrd (+5s)
     };
     plymouth.enable = false; # It just makes my boot time so fucking slow it makes me want to cry
     extraModulePackages = [] ++ (lib.optionals config.overworld.amd.enable [pkgs.linuxPackages_zen.zenpower]);
-    kernelModules = [] ++ (lib.optionals config.overworld.amd.enable ["zenpower"]);
+    kernelModules = [] ++ (lib.optionals config.overworld.amd.enable ["zenpower"]) ++ (lib.optionals config.overworld.tp.enable ["iwlwifi"]);
     # Blacklist TPM and serial ports + k10temp if AMD config module is enabled, temps are handled by zenpower
     blacklistedKernelModules = [ "tpm" "tpm_tis" "tpm_crb" "8250" "serial_core" "iwlwifi" ] ++ (lib.optionals config.overworld.amd.enable ["k10temp"]);
     kernelPackages = pkgs.linuxPackages_zen;
