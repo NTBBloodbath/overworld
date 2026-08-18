@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   inputs,
   ...
@@ -29,15 +30,14 @@
         inputs.norgolith.packages.x86_64-linux.norgolith-mcp
         inputs.serena.packages.x86_64-linux.default
         opencode
-        chromium # Separate browser for work
+        # chromium # Separate browser for work
         numbat
         # Social
-        slack
+        # slack
         vesktop
         signal-desktop
         element-desktop
         # Multimedia
-        svp
         vlc
         ffmpeg
         inkscape
@@ -47,13 +47,13 @@
         pavucontrol
         nicotine-plus # Soulseek client
         # Misc
+        croc
         newsflash # RSS Reader
         inputs.nixpkgs-stable.legacyPackages.${system}.bottles # Wine made easy
         proton-vpn # Goofy ahh VPN service need
         qbittorrent
         bagels # Expenses tracker
         obsidian # Better note taking
-        linux-wallpaperengine # Wallpaper Engine
         chameleos # Screen annotation tool
         (inputs.zen-browser.packages.${system}.default.override {
           nativeMessagingHosts = [firefoxpwa];
@@ -76,7 +76,10 @@
             };
           };
         })
-      ];
+      ] ++ (lib.optionals (!config.overworld.tp.enable) [
+        svp
+        linux-wallpaperengine
+      ]);
     };
   };
 }
