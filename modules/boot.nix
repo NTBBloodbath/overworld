@@ -41,7 +41,7 @@
     extraModulePackages = [] ++ (lib.optionals config.overworld.amd.enable [pkgs.linuxPackages_zen.zenpower]);
     kernelModules = [] ++ (lib.optionals config.overworld.amd.enable ["zenpower"]) ++ (lib.optionals config.overworld.tp.enable ["iwlwifi"]);
     # Blacklist TPM and serial ports + k10temp if AMD config module is enabled, temps are handled by zenpower
-    blacklistedKernelModules = [ "tpm" "tpm_tis" "tpm_crb" "8250" "serial_core" "iwlwifi" ] ++ (lib.optionals config.overworld.amd.enable ["k10temp"]);
+    blacklistedKernelModules = [ "tpm" "tpm_tis" "tpm_crb" "8250" "serial_core" ] ++ (lib.optionals config.overworld.amd.enable ["k10temp"]);
     kernelPackages = pkgs.linuxPackages_zen;
     # KERNEL PARAMETER                       | Parameter description
     # ---------------------------------------+---------------------------------------------------------------------------------------

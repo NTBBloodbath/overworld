@@ -5,7 +5,14 @@
 
   config = {
     # Enable conditional configurations
-    overworld.tp.enable = true;
+    overworld = {
+      tp.enable = true;
+      gaming = {
+        enable = true;
+        diablo.enable = true;
+        minecraft.enable = true;
+      };
+    };
 
     # Enable OpenGL and hardware accelerated graphics drivers
     hardware.graphics = {

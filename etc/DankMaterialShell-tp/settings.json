@@ -174,7 +174,7 @@
       "width": 50
     },
     {
-      "id": "battery",
+      "id": "plugin_batteryPlus",
       "enabled": true,
       "width": 100
     }
@@ -701,11 +701,8 @@
           "enabled": true
         },
         {
-          "id": "battery",
-          "enabled": true,
-          "showBatteryTime": true,
-          "showBatteryTimeOnlyOnBattery": true,
-          "batteryPillStyle": false
+          "id": "batteryPlus",
+          "enabled": true
         },
         {
           "id": "controlCenterButton",

@@ -18,13 +18,11 @@
     programs.gamemode.enable = true;
 
     environment.systemPackages = with pkgs; [
-      heroic # Epic games launcher
       mangohud # Performance monitoring
       # mindustry-wayland # Mindustry BROKEN
-      osu-lazer-bin # Osu! my beloved
-      devilutionx # Stay a while and listen
-      jetbrains.jdk # OpenJDK does not ship JavaFX for Minecraft
-      mcrcon # RCON server for Minecraft servers
-    ];
+    ]
+    ++ (lib.optionals config.overworld.gaming.heroic.enable [ heroic ])
+    ++ (lib.optionals config.overworld.gaming.diablo.enable [ devilutionx ])
+    ++ (lib.optionals config.overworld.gaming.minecraft.enable [ mcrcon jetbrains.jdk ]);
   };
 }

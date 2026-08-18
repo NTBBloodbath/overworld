@@ -7,7 +7,12 @@
     # Enable conditional configurations
     overworld = {
       amd.enable = true;
-      gaming.enable = true;
+      gaming = {
+        enable = true;
+        heroic.enable = true;
+        diablo.enable = true;
+        minecraft.enable = true;
+      };
       mpd.enable = true;
       lact.enable = true;
       cloudflare.enable = true;

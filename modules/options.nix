@@ -6,8 +6,11 @@
     # Desktop specific configurations (Ryzen, AMDGPU)
     amd.enable = lib.mkEnableOption "Enable AMD hardware related configurations";
 
-    # Misc stuff
-    gaming.enable = lib.mkEnableOption "Whether to install gaming packages";
+    # Gaming launchers and services
+    gaming.enable = lib.mkEnableOption "Whether to install core gaming packages (Steam, gamemode, mangohud)";
+    gaming.heroic.enable = lib.mkEnableOption "Whether to install Heroic launcher";
+    gaming.diablo.enable = lib.mkEnableOption "Whether to install DevilutionX";
+    gaming.minecraft.enable = lib.mkEnableOption "Whether to install OpenJDK and mcrcon packages";
 
     # Services
     mpd.enable = lib.mkEnableOption "Whether to enable MPD service";
