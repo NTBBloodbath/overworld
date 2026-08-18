@@ -121,6 +121,25 @@ in {
   # Fan control
   services.thinkfan = {
     enable = config.overworld.tp.enable;
+    # Slightly more aggressive than NixOS defaults:
+    #   - 0-52C at lowest speed, quiet idle. Ramping begins ~47C.
+    #   - All 8 levels instead of 5 levels. Smoother, gradual increase = less stress, cooler than default early on.
+    #   - Each band overlaps ~3-4C. Strong hysteresis, few transitions. Good fan lifespan.
+    #   - 67-85C for max. Stil reaches full speed well before thermal throttling. Temps stay low under load.
+    #   - "level auto" 80 32767 keep as ceiling safety net.
+    #
+    # See: https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/services/hardware/thinkfan.nix
+    levels = [
+      [ 0 0 52 ]
+      [ 1 47 56 ]
+      [ 2 50 58 ]
+      [ 3 54 62 ]
+      [ 4 57 65 ]
+      [ 5 60 68 ]
+      [ 6 63 73 ]
+      [ 7 67 85 ]
+      [ "level auto" 80 32767 ]
+    ];
   };
 
   # Touchpad (enabled default in most desktopManager)
