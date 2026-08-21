@@ -23,12 +23,6 @@
     # Hjem
     hjem.url = "github:feel-co/hjem";
 
-    # Niri
-    niri-git = {
-      url = "github:YaLTeR/niri";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Quickshell nightly
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
@@ -79,7 +73,6 @@
     neovim-nightly-overlay,
     norgolith,
     hjem,
-    niri-git,
     quickshell,
     dank-material-shell,
     dgop,
